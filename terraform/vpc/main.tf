@@ -4,5 +4,3 @@ resource "google_compute_network" "vpc-1" {
   auto_create_subnetworks = false
   routing_mode            = "REGIONAL"
 }
-
-

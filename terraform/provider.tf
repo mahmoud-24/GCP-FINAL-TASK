@@ -1,4 +1,5 @@
 provider "google" {
-  project     = "mahmoud-ibrahim-2-project"
+  project     = var.project_id
   region      = var.region
+  credentials = file(var.credentials_file_path)
 }

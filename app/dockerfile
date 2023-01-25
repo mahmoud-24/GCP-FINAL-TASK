@@ -1,0 +1,28 @@
+FROM python:3.8
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the current directory contents into the container
+COPY . /app
+
+ENV ENVIRONMENT DEV
+
+ENV HOST localhost
+
+ENV PORT 8000
+
+ENV REDIS_HOST localhost
+
+ENV REDIS_PORT 6379
+
+ENV REDIS_DB 0
+
+# Install any needed packages
+RUN pip install -r requirements.txt
+
+# Make port available to the world outside this container
+EXPOSE 8000
+
+# Run hello.py when the container launches
+CMD ["python", "hello.py"]
