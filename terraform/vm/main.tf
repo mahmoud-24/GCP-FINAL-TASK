@@ -1,15 +1,21 @@
 resource "google_compute_instance" "private-vm" {
-  name         = "private-vm"
-  machine_type = var.machine_type
-  zone         = "us-central1-c"
+  name = "private-vm"
+  machine_type = "e2-micro"
+  zone = var.zone
+
+  service_account {
+    email = var.email
+    scopes = ["https://www.googleapis.com/auth/cloud-platform" ]
+  }
   boot_disk {
     initialize_params {
-      image = var.machine_image
+      image = var.image
+      size = 50
     }
   }
 
   network_interface {
-    network    = module.network.network_name
-    subnetwork = module.network.management-subnet_name
+    network = var.vpc-id
+    subnetwork = var.subnet-id
   }
 }

@@ -24,6 +24,9 @@ variable "service_account" {
   description = "The GCP service account"
 }
 
+variable "iam-role" {
+    type    = list
+}
 
 /*
 variable "cluster_node_zones" {
