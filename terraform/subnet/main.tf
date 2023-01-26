@@ -1,7 +1,7 @@
 resource "google_compute_subnetwork" "subnet" {
-  name                     = var.sub-name
+  name                     = var.subnet-name
   ip_cidr_range            = var.subnet-cidr
   region                   = var.region
-  network                  = var.vpc-1-name 
+  network                  = var.vpc-name
   private_ip_google_access = true                   
 }

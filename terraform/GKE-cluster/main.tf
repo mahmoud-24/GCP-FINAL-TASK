@@ -16,7 +16,9 @@ resource "google_container_cluster" "private-cluster" {
       cidr_block   = var.subnet-cidr
     }
   }
+  ip_allocation_policy {
 
+  }
   node_config {
   service_account = var.email
     oauth_scopes  = [
@@ -31,9 +33,9 @@ resource "google_container_cluster" "private-cluster" {
   }
 }
 
-resource "google_container_node_pool" "app_cluster_node_pool" {
+resource "google_container_node_pool" "private-cluster_node_pool" {
 
-  name           = "${google_container_cluster.app_cluster.name}--node-pool"
+  name           = "${google_container_cluster.private-cluster.name}--node-pool"
   location       = google_container_cluster.private-cluster.location
   cluster        = google_container_cluster.private-cluster.name
   node_count     = 1

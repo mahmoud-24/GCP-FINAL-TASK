@@ -3,6 +3,9 @@ project_id = "mahmoud-ibrahim-2-project"
 zone       = "us-central1-b"
 image      = "ubuntu-os-cloud/ubuntu-2204-lts"
 vpc-name   = "vpc-1"
+subnet-name = "restricted-subnet"
+subnet-cidr = "10.0.1.0/24"
+
 
 
 

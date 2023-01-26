@@ -32,3 +32,27 @@ variable "service_account" {
 variable "iam-role" {
     type    = list
 }
+
+variable "vpc-name" {
+    type    = string
+}
+
+variable "subnet-name" {
+    type    = string
+}
+
+variable "subnet-id" {
+    type    = string
+}
+
+variable "vpc-id" {
+    type    = string
+}
+
+variable "email" {
+    type    = string
+}
+
+variable "subnet-cidr" {
+    type    = string
+}
