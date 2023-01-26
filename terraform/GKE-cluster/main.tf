@@ -8,8 +8,8 @@ resource "google_container_cluster" "private-cluster" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
-  network    = var.vpc-name
-  subnetwork = var.subnet-name
+  network    = var.vpc-id
+  subnetwork = var.subnet-id
 
   master_authorized_networks_config {
     cidr_blocks {

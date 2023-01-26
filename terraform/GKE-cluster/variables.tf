@@ -7,15 +7,13 @@ variable "email" {
   type        = string
 }
 
-variable "vpc-name" {
-    type    = string
-}
-
-variable "subnet-name" {
-    type    = string
-}
-
 variable "subnet-cidr" {
 }
 
+variable "vpc-id" {
+    type    = string
+}
 
+variable "subnet-id" {
+    type    = string
+}

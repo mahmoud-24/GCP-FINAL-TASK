@@ -1,6 +1,6 @@
 resource "google_compute_router" "router" {
   name    = "router"
-  network = var.vpc-name
+  network = var.vpc-id
   region  = var.region
 }
 
@@ -13,7 +13,7 @@ resource "google_compute_router_nat" "nat-rules" {
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS" 
 
   subnetwork {
-    name                    = var.subnet-name
+    name                    = var.subnet-id
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
 

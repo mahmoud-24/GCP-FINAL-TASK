@@ -9,7 +9,8 @@ resource "google_compute_network" "vpc-1" {
 resource "google_compute_firewall" "firewall" {
   name          = "firewall"
   source_ranges = ["0.0.0.0/0"]
-  network       = google_compute_network.vpc-1.name
+  network       = google_compute_network.vpc-1.id
+  direction = "INGRESS"
 
   allow {
     protocol = "tcp"
