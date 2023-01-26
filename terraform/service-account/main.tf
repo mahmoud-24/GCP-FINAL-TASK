@@ -1,12 +1,12 @@
 resource "google_project_iam_custom_role" "iam-role" {
-  role_id = "iam_role"
-  title = "iam_role"
+  role_id     = "iam_role"
+  title       = "iam_role"
   permissions = var.iam-role
 }
 
 resource "google_service_account" "service-account" {
   account_id = "service-account"
-  project = var.project_id
+  project    = var.project_id
 }
 
 resource "google_project_iam_binding" "iam-bendig-1" {

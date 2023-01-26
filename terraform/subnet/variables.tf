@@ -5,6 +5,12 @@ variable "subnet-name" {
 variable "subnet-cidr" {
 }
 
-variable "vpc-1-name" {
+variable "vpc-name" {
     type    = string
+}
+
+variable "region" {
+    default     = "us-central1"
+    type        = string
+    description = "defualt us-central1"
 }

@@ -19,7 +19,7 @@ resource "google_container_cluster" "private-cluster" {
 
   node_config {
   service_account = var.email
-    oauth_scopes = [
+    oauth_scopes  = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
@@ -43,7 +43,7 @@ resource "google_container_node_pool" "app_cluster_node_pool" {
     machine_type = "e2-micro"
 
     service_account = var.email
-    oauth_scopes = [
+    oauth_scopes    = [
       "https://www.googleapis.com/auth/cloud-platform" 
     ]
  }
