@@ -36,9 +36,15 @@ resource "google_container_cluster" "private-cluster" {
 resource "google_container_node_pool" "private-cluster_node_pool" {
 
   name           = "${google_container_cluster.private-cluster.name}--node-pool"
-  location       = google_container_cluster.private-cluster.location
-  cluster        = google_container_cluster.private-cluster.name
+  # location       = google_container_cluster.private-cluster.location
+  location = "us-east4-a"
+  cluster        = google_container_cluster.private-cluster.id
   node_count     = 1
+
+  management {
+    auto_repair  = true
+    auto_upgrade = true
+      }
 
   node_config {
     preemptible  = true

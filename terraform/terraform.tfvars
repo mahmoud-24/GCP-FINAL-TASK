@@ -1,6 +1,6 @@
-region     = "us-central1"
+region     = "us-east4"
 project_id = "mahmoud-ibrahim-2-project"
-zone       = "us-central1-b"
+zone       = "us-east4-b"
 image      = "ubuntu-os-cloud/ubuntu-2204-lts"
 vpc-name   = "vpc-1"
 subnet-name = "restricted-subnet"

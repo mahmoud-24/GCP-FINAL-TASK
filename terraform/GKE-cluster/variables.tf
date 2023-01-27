@@ -17,3 +17,4 @@ variable "vpc-id" {
 variable "subnet-id" {
     type    = string
 }
+

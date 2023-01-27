@@ -3,9 +3,9 @@ variable "subnet-id" {
 }
 
 variable "region" {
-    default     = "us-central1"
+    default     = "us-east4"
     type        = string
-    description = "defualt us-central1"
+    description = "defualt us-east4"
 }
 
 variable "vpc-id" {

@@ -8,7 +8,7 @@ module "google_management-subnet" {
   subnet-name = "management-subnet"
   subnet-cidr = "10.0.1.0/24"
   region      = var.region
-  vpc-id    = module.google_vpc.vpc-id
+  vpc-id      = module.google_vpc.vpc-id
 }
 
 module "google_restricted-subnet" {
@@ -16,14 +16,14 @@ module "google_restricted-subnet" {
   subnet-name = "restricted-subnet"
   subnet-cidr = "10.0.2.0/24"
   region      = var.region
-  vpc-id    = module.google_vpc.vpc-id
+  vpc-id      = module.google_vpc.vpc-id
 }
 
 module "google_routing" {
-  source      = "./nat-gateway"
-  region      = var.region
+  source    = "./nat-gateway"
+  region    = var.region
   vpc-id    = module.google_vpc.vpc-id
-  subnet-id   = module.google_management-subnet.subnet-id
+  subnet-id = module.google_management-subnet.subnet-id
 }
 
 module "google_service-account" {
