@@ -16,8 +16,24 @@ resource "google_container_cluster" "private-cluster" {
       cidr_block   = var.subnet-cidr
     }
   }
-  ip_allocation_policy {
+  addons_config {
+    http_load_balancing {
+      disabled = true
+    }
+    horizontal_pod_autoscaling {
+      disabled = false
+    }
 
+  }
+
+  release_channel {
+    channel = "REGULAR"
+  }
+
+  workload_identity_config {
+    workload_pool = "mahmoud-ibrahim-2-project.svc.id.goog"
+  }
+  ip_allocation_policy {
   }
   node_config {
   service_account = var.email

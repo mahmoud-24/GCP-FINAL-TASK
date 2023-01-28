@@ -13,7 +13,13 @@ resource "google_compute_instance" "private-vm" {
       size  = 50
     }
   }
-
+/*
+  depends_on = [
+    google_container_cluster.private-cluster
+   , google_container_node_pool.private-cluster_node_pool
+  ]
+  metadata_startup_script = "${file("./script.sh")}"
+  */
   network_interface {
     network    = var.vpc-id
     subnetwork = var.subnet-id
