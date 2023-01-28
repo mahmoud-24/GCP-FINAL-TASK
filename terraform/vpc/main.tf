@@ -11,9 +11,7 @@ resource "google_compute_firewall" "firewall" {
   network       = google_compute_network.vpc-1.id
   direction     = "INGRESS"
   source_ranges = ["0.0.0.0/0"]
-  depends_on = [
-    google_compute_network.vpc-1
-  ]
+  
   allow {
     protocol = "tcp"
     ports    = ["22","80"]

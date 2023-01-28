@@ -8,7 +8,6 @@ resource "google_compute_router_nat" "nat-rules" {
   name                               = "nat-rules"
   router                             = google_compute_router.router.name
   region                             = google_compute_router.router.region
-  # subnetwork                         = var.subnet-id
   nat_ip_allocate_option             = "AUTO_ONLY"
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS" 
 

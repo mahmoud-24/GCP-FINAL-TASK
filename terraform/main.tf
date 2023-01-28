@@ -49,3 +49,5 @@ module "google_GKE-cluster" {
   subnet-id   = module.google_restricted-subnet.subnet-id
   subnet-cidr = var.subnet-cidr
 }
+
+

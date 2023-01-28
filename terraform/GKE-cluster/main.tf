@@ -13,7 +13,7 @@ resource "google_container_cluster" "private-cluster" {
 
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block   = var.subnet-cidr
+      cidr_block = var.subnet-cidr
     }
   }
   addons_config {
@@ -51,11 +51,10 @@ resource "google_container_cluster" "private-cluster" {
 
 resource "google_container_node_pool" "private-cluster_node_pool" {
 
-  name           = "${google_container_cluster.private-cluster.name}--node-pool"
-  # location       = google_container_cluster.private-cluster.location
-  location = "us-east4-a"
-  cluster        = google_container_cluster.private-cluster.id
-  node_count     = 1
+  name       = "${google_container_cluster.private-cluster.name}--node-pool"
+  location   = "us-east4-a"
+  cluster    = google_container_cluster.private-cluster.id
+  node_count = 1
 
   management {
     auto_repair  = true

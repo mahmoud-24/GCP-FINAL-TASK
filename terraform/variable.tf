@@ -1,7 +1,7 @@
 variable "region" {
     default     = "us-east4"
     type        = string
-    description = "defualt us-east4"
+    description = "The region"
 }
 
 variable "project_id" {
@@ -18,11 +18,6 @@ variable "image" {
   type        = string
   description = "The OS image"
 }
-
-# variable "credentials_file_path" {
-#   type        = string
-#   description = "The credentials JSON file used to authenticate with GCP"
-# }
 
 variable "service_account" {
   type        = string
@@ -54,5 +49,9 @@ variable "email" {
 }
 
 variable "subnet-cidr" {
+    type    = string
+}
+
+variable "credentials" {
     type    = string
 }
